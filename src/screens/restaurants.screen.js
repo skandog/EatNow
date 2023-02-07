@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Searchbar } from "react-native-paper";
+import { RestaurantInfo } from "../components/restaurant-info.component";
 
 export const RestaurantScreen = () => {
   return (
@@ -10,7 +11,7 @@ export const RestaurantScreen = () => {
         {/* <Text>Pearch</Text> */}
       </View>
       <View style={styles.list}>
-        <Text>List</Text>
+        <RestaurantInfo />
       </View>
     </>
   );

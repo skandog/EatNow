@@ -1,6 +1,7 @@
 import React from "react";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { SafeAreaView, StyleSheet, StatusBar, Platform } from "react-native";
+
 import { RestaurantScreen } from "./src/screens/restaurants.screen";
 
 const isAndroid = Platform.OS === "android";
