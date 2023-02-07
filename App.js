@@ -1,3 +1,4 @@
+import React from "react";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import {
   SafeAreaView,
@@ -14,7 +15,7 @@ export default function App() {
     <>
       <SafeAreaView style={styles.container}>
         <View style={styles.search}>
-          <Text style={{ flex: 1 }}>Pearch</Text>
+          <Text>Pearch</Text>
         </View>
         <View style={styles.list}>
           <Text>List</Text>
