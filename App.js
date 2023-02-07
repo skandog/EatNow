@@ -8,6 +8,7 @@ import {
   StatusBar,
   Platform,
 } from "react-native";
+import { Searchbar } from "react-native-paper";
 
 const isAndroid = Platform.OS === "android";
 export default function App() {
@@ -15,7 +16,8 @@ export default function App() {
     <>
       <SafeAreaView style={styles.container}>
         <View style={styles.search}>
-          <Text>Pearch</Text>
+          <Searchbar />
+          {/* <Text>Pearch</Text> */}
         </View>
         <View style={styles.list}>
           <Text>List</Text>
