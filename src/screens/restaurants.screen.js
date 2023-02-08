@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Searchbar } from "react-native-paper";
-import { RestaurantInfo } from "../components/restaurant-info.component";
+import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 
 export const RestaurantScreen = () => {
   return (
@@ -11,7 +11,7 @@ export const RestaurantScreen = () => {
         {/* <Text>Pearch</Text> */}
       </View>
       <View style={styles.list}>
-        <RestaurantInfo />
+        <RestaurantInfoCard />
       </View>
     </>
   );
@@ -20,7 +20,7 @@ export const RestaurantScreen = () => {
 const styles = StyleSheet.create({
   list: {
     flex: 1,
-    backgroundColor: "blue",
+    backgroundColor: "white",
     padding: 16,
   },
   search: {
