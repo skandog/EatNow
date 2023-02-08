@@ -9,7 +9,7 @@ import { theme } from "./src/infrastructure/theme";
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
-  background-color: "#fff";
+  background-color: ${(props) => props.theme.colors.bg.primary};
   ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
 `;
 
@@ -21,11 +21,11 @@ const SafeArea = styled(SafeAreaView)`
 export default function App() {
   return (
     <>
-      <SafeArea>
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <SafeArea>
           <RestaurantScreen />
-        </ThemeProvider>
-      </SafeArea>
+        </SafeArea>
+      </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
   );
