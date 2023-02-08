@@ -2,28 +2,28 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Searchbar } from "react-native-paper";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
+import styled from "styled-components";
+
+const SearchView = styled.View`
+  background-color: green;
+  padding: 16px;
+`;
+
+const ListView = styled.View`
+  flex: 1;
+  background-color: "white";
+  padding: 16px;
+`;
 
 export const RestaurantScreen = () => {
   return (
     <>
-      <View style={styles.search}>
+      <SearchView>
         <Searchbar />
-      </View>
-      <View style={styles.list}>
+      </SearchView>
+      <ListView>
         <RestaurantInfoCard />
-      </View>
+      </ListView>
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  list: {
-    flex: 1,
-    backgroundColor: "white",
-    padding: 16,
-  },
-  search: {
-    backgroundColor: "green",
-    padding: 16,
-  },
-});
