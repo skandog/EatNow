@@ -1,5 +1,4 @@
 import React from "react";
-import { StyleSheet } from "react-native";
 import { Text, Card } from "react-native-paper";
 import styled from "styled-components/native";
 
@@ -13,7 +12,7 @@ const RestaurantCardCover = styled(Card.Cover)`
 `;
 
 const RestaurantCardTitle = styled(Text)`
-  font-size: 16px;
+  font-size: 20px;
   padding: 16px;
   color: black;
 `;
