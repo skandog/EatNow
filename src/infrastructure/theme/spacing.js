@@ -3,4 +3,11 @@ export const lineHeights = {
   copy: "20px",
 };
 
-export const space = ["0px", "4px", "8px", "16px", "32px", "64px"];
+export const space = {
+  xs: "0px",
+  s: "4px",
+  m: "8px",
+  l: "16px",
+  xl: "32px",
+  xxl: "64px",
+};
