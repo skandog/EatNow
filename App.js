@@ -2,8 +2,10 @@ import React from "react";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { SafeAreaView, StatusBar } from "react-native";
 import styled from "styled-components";
+import { ThemeProvider } from "styled-components/native";
 
 import { RestaurantScreen } from "./src/screens/restaurants.screen";
+import { theme } from "./src/infrastructure/theme";
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
@@ -20,7 +22,9 @@ export default function App() {
   return (
     <>
       <SafeArea>
-        <RestaurantScreen />
+        <ThemeProvider theme={theme}>
+          <RestaurantScreen />
+        </ThemeProvider>
       </SafeArea>
       <ExpoStatusBar style="auto" />
     </>
