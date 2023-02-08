@@ -8,7 +8,6 @@ export const RestaurantScreen = () => {
     <>
       <View style={styles.search}>
         <Searchbar />
-        {/* <Text>Pearch</Text> */}
       </View>
       <View style={styles.list}>
         <RestaurantInfoCard />
