@@ -5,6 +5,7 @@ import styled from "styled-components/native";
 import { SvgXml } from "react-native-svg";
 
 import star from "../../assets/star";
+import open from "../../assets/open";
 
 const RestaurantCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
@@ -36,6 +37,17 @@ const StarView = styled(View)`
   padding-bottom: ${(props) => props.theme.space.s};
 `;
 
+const Row = styled(View)`
+  flex-direction: row;
+  align-items: center;
+`;
+
+const OpenView = styled(View)`
+  flex: 1;
+  flex-direction: row;
+  justify-content: flex-end;
+`;
+
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
     name = "Some Food House",
@@ -46,7 +58,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     address = "100 london street, London, SW1H 9HH",
     isOpenNow = true,
     rating = 4,
-    isClosedTemporarily,
+    isClosedTemporarily = true,
   } = restaurant;
 
   const ratingArray = Array.from(new Array(Math.floor(rating)));
@@ -56,12 +68,16 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       <RestaurantCardInfo>
         <RestaurantCardTitle>{name}</RestaurantCardTitle>
-        <StarView>
-          {ratingArray.map((elt, index) => {
-            return <SvgXml xml={star} width={20} height={20} key={index} />;
-          })}
-        </StarView>
-
+        <Row>
+          <StarView>
+            {ratingArray.map((elt, index) => {
+              return <SvgXml xml={star} width={20} height={20} key={index} />;
+            })}
+          </StarView>
+          <OpenView>
+            {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
+          </OpenView>
+        </Row>
         <RestaurantCardAddress>{address}</RestaurantCardAddress>
       </RestaurantCardInfo>
     </RestaurantCard>
