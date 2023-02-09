@@ -3,27 +3,27 @@ import { View } from "react-native";
 import styled from "styled-components";
 
 const TopSmall = styled.View`
-  margin-top: ${(props) => props.theme.space[1]};
+  margin-top: ${(props) => props.theme.space.s};
 `;
 
 const TopMedium = styled.View`
-  margin-top: ${(props) => props.theme.space[2]};
+  margin-top: ${(props) => props.theme.space.m};
 `;
 
 const TopLarge = styled.View`
-  margin-top: ${(props) => props.theme.space[3]};
+  margin-top: ${(props) => props.theme.space.l};
 `;
 
 const LeftSmall = styled.View`
-  margin-left: ${(props) => props.theme.space[1]};
+  margin-left: ${(props) => props.theme.space.s};
 `;
 
 const LeftMedium = styled.View`
-  margin-left: ${(props) => props.theme.space[2]};
+  margin-left: ${(props) => props.theme.space.m};
 `;
 
 const LeftLarge = styled.View`
-  margin-left: ${(props) => props.theme.space[3]};
+  margin-left: ${(props) => props.theme.space.l};
 `;
 
 export const Spacer = ({ variant }) => {
