@@ -32,6 +32,8 @@ const RestaurantCardAddress = styled(Text)`
 
 const StarView = styled(View)`
   flex-direction: row;
+  padding-top: ${(props) => props.theme.space.s};
+  padding-bottom: ${(props) => props.theme.space.s};
 `;
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
