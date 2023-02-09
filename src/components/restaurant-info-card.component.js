@@ -1,6 +1,6 @@
 import React from "react";
-import { Text, Card } from "react-native-paper";
-import { View } from "react-native";
+import { Card } from "react-native-paper";
+import { View, Text, Image } from "react-native";
 import styled from "styled-components/native";
 import { SvgXml } from "react-native-svg";
 
@@ -37,12 +37,12 @@ const StarView = styled(View)`
   padding-bottom: ${(props) => props.theme.space.s};
 `;
 
-const Row = styled(View)`
+const Section = styled(View)`
   flex-direction: row;
   align-items: center;
 `;
 
-const OpenView = styled(View)`
+const SectionEnd = styled(View)`
   flex: 1;
   flex-direction: row;
   justify-content: flex-end;
@@ -51,7 +51,7 @@ const OpenView = styled(View)`
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
     name = "Some Food House",
-    icon,
+    icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
     photos = [
       "https://res.cloudinary.com/grubhub/image/upload/d_search:browse-images:default.jpg/w_267,q_auto:low,fl_lossy,dpr_2.0,c_fill,f_auto,h_132,g_auto/s1rpyrpvzgnww1jmxus1",
     ],
@@ -68,16 +68,26 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       <RestaurantCardInfo>
         <RestaurantCardTitle>{name}</RestaurantCardTitle>
-        <Row>
+        <Section>
           <StarView>
             {ratingArray.map((elt, index) => {
               return <SvgXml xml={star} width={20} height={20} key={index} />;
             })}
           </StarView>
-          <OpenView>
+          <SectionEnd>
+            {isClosedTemporarily && (
+              <Text variant="label" style={{ color: "red" }}>
+                CLOSED TEMPORARILY
+              </Text>
+            )}
+            <View style={{ paddingLeft: 16 }} />
+
             {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
-          </OpenView>
-        </Row>
+            <View style={{ paddingLeft: 16 }} />
+
+            <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
+          </SectionEnd>
+        </Section>
         <RestaurantCardAddress>{address}</RestaurantCardAddress>
       </RestaurantCardInfo>
     </RestaurantCard>
