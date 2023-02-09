@@ -4,8 +4,8 @@ import { View, Text, Image } from "react-native";
 import styled from "styled-components/native";
 import { SvgXml } from "react-native-svg";
 
-import star from "../../assets/star";
-import open from "../../assets/open";
+import star from "../../../../assets/star";
+import open from "../../../../assets/open";
 
 const RestaurantCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
