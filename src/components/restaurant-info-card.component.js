@@ -2,6 +2,9 @@ import React from "react";
 import { Text, Card } from "react-native-paper";
 import { View } from "react-native";
 import styled from "styled-components/native";
+import { SvgXml } from "react-native-svg";
+
+import star from "../../assets/star";
 
 const RestaurantCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
@@ -27,6 +30,10 @@ const RestaurantCardAddress = styled(Text)`
   font-size: ${(props) => props.theme.fontSizes.body};
 `;
 
+const StarView = styled(View)`
+  flex-direction: row;
+`;
+
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
     name = "Some Food House",
@@ -40,11 +47,19 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     isClosedTemporarily,
   } = restaurant;
 
+  const ratingArray = Array.from(new Array(Math.floor(rating)));
+
   return (
     <RestaurantCard elevation={5}>
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       <RestaurantCardInfo>
         <RestaurantCardTitle>{name}</RestaurantCardTitle>
+        <StarView>
+          {ratingArray.map((elt, index) => {
+            return <SvgXml xml={star} width={20} height={20} key={index} />;
+          })}
+        </StarView>
+
         <RestaurantCardAddress>{address}</RestaurantCardAddress>
       </RestaurantCardInfo>
     </RestaurantCard>
