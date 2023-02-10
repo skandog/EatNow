@@ -8,52 +8,17 @@ import star from "../../../../assets/star";
 import open from "../../../../assets/open";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
-
-const RestaurantCard = styled(Card)`
-  background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-const RestaurantCardCover = styled(Card.Cover)`
-  padding: ${(props) => props.theme.space.l};
-  background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-const RestaurantCardInfo = styled(View)`
-  padding: ${(props) => props.theme.space.l};
-`;
-
-const RestaurantCardTitle = styled(Text)`
-  font-family: ${(props) => props.theme.fonts.heading};
-  font-size: ${(props) => props.theme.fontSizes.title};
-  color: ${(props) => props.theme.colors.text.primary};
-`;
-
-const RestaurantCardAddress = styled(Text)`
-  font-family: ${(props) => props.theme.fonts.body};
-  font-size: ${(props) => props.theme.fontSizes.body};
-`;
-
-const StarView = styled(View)`
-  flex-direction: row;
-  padding-top: ${(props) => props.theme.space.s};
-  padding-bottom: ${(props) => props.theme.space.s};
-`;
-
-const Section = styled(View)`
-  flex-direction: row;
-  align-items: center;
-`;
-
-const SectionEnd = styled(View)`
-  flex: 1;
-  flex-direction: row;
-  justify-content: flex-end;
-`;
-
-const Icon = styled(Image)`
-  width: 15px;
-  height: 15px;
-`;
+import {
+  RestaurantCard,
+  RestaurantCardCover,
+  RestaurantCardInfo,
+  RestaurantCardTitle,
+  Section,
+  StarView,
+  SectionEnd,
+  Icon,
+  RestaurantCardAddress,
+} from "./restaurant-info-card.styles";
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
