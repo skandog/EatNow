@@ -5,6 +5,12 @@ import { RestaurantInfoCard } from "../components/restaurant-info-card.component
 import styled from "styled-components";
 import { Spacer } from "../../../components/spacer/spacer.component";
 
+const SafeArea = styled(SafeAreaView)`
+  flex: 1;
+  background-color: ${(props) => props.theme.colors.bg.primary};
+  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
+`;
+
 const SearchView = styled(View)`
   background-color: ${(props) => props.theme.colors.brand.primary};
   padding: ${(props) => props.theme.space.l};
@@ -18,7 +24,7 @@ const RestaurantList = styled(FlatList).attrs({
 
 export const RestaurantScreen = () => {
   return (
-    <>
+    <SafeArea>
       <SearchView>
         <Searchbar />
       </SearchView>
@@ -31,6 +37,6 @@ export const RestaurantScreen = () => {
         )}
         keyExtractor={(item) => item.name}
       />
-    </>
+    </SafeArea>
   );
 };

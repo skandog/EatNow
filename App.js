@@ -12,16 +12,6 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { RestaurantScreen } from "./src/features/restaurants/screens/restaurants.screen";
 import { theme } from "./src/infrastructure/theme";
 
-const SafeArea = styled(SafeAreaView)`
-  flex: 1;
-  background-color: ${(props) => props.theme.colors.bg.primary};
-  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
-`;
-
-
-
-
-
 export default function App() {
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
@@ -36,11 +26,8 @@ export default function App() {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <SafeArea>
-          <RestaurantScreen />
-        </SafeArea>
-      </ThemeProvider>
+      <ThemeProvider theme={theme} />
+
       <ExpoStatusBar style="auto" />
     </>
   );
