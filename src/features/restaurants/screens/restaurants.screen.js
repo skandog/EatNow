@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { View, FlatList } from "react-native";
 import { Searchbar } from "react-native-paper";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import styled from "styled-components";
@@ -21,9 +21,12 @@ export const RestaurantScreen = () => {
       <SearchView>
         <Searchbar />
       </SearchView>
-      <ListView>
-        <RestaurantInfoCard />
-      </ListView>
+      <FlatList
+        data={[{ name: 1 }, { name: 2 },]}
+        renderItem={() => <RestaurantInfoCard />}
+        keyExtractor={(item) => item.name}
+        contentContainerStyle={{ padding: 16 }}
+      />
     </>
   );
 };
