@@ -10,11 +10,11 @@ const SearchView = styled(View)`
   padding: ${(props) => props.theme.space.l};
 `;
 
-const ListView = styled(View)`
-  flex: 1;
-  background-color: ${(props) => props.theme.colors.bg.primary};
-  padding: ${(props) => props.theme.space.l};
-`;
+const RestaurantList = styled(FlatList).attrs({
+  contentContainerStyle: {
+    padding: 16,
+  },
+})``;
 
 export const RestaurantScreen = () => {
   return (
@@ -22,7 +22,7 @@ export const RestaurantScreen = () => {
       <SearchView>
         <Searchbar />
       </SearchView>
-      <FlatList
+      <RestaurantList
         data={[{ name: 1 }, { name: 2 }, { name: 3 }, { name: 4 }]}
         renderItem={() => (
           <Spacer position={"bottom"} size="large">
@@ -30,7 +30,6 @@ export const RestaurantScreen = () => {
           </Spacer>
         )}
         keyExtractor={(item) => item.name}
-        contentContainerStyle={{ padding: 16 }}
       />
     </>
   );
