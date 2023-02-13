@@ -5,7 +5,7 @@ import {
   restaurantsTransform,
 } from "./restaurants.service";
 
-export const RestaurantContext = createContext();
+export const RestaurantsContext = createContext();
 
 export const RestaurantContextProvider = ({ children }) => {
   const [restaurants, setRestaurants] = useState([]);
@@ -31,5 +31,9 @@ export const RestaurantContextProvider = ({ children }) => {
     retrieveRestaurants();
   }, []);
 
-  return <RestaurantContext.Provider>{children}</RestaurantContext.Provider>;
+  return (
+    <RestaurantsContext.Provider value={{ restaurants, isLoading, error }}>
+      {children}
+    </RestaurantsContext.Provider>
+  );
 };
