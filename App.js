@@ -11,14 +11,9 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
+import { SafeArea } from "./src/components/utils/safe-area.component";
 import { RestaurantScreen } from "./src/features/restaurants/screens/restaurants.screen";
 import { theme } from "./src/infrastructure/theme";
-
-const SafeArea = styled(SafeAreaView)`
-  flex: 1;
-  background-color: ${(props) => props.theme.colors.bg.primary};
-  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
-`;
 
 // Previous implementation of padding top - not sure about
 // change, so leaving in case this is more semantic
@@ -61,7 +56,7 @@ export default function App() {
         <NavigationContainer>
           <SafeArea>
             <Tab.Navigator>
-              <Tab.Screen name="Restaurants" component={RestaurantScreen} />
+              <Tab.Screen name="Restauranffs" component={RestaurantScreen} />
               <Tab.Screen name="Maps" component={MapsScreen} />
               <Tab.Screen name="Settings" component={SettingsScreen} />
             </Tab.Navigator>
