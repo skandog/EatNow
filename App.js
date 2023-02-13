@@ -15,7 +15,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { SafeArea } from "./src/components/utils/safe-area.component";
 import { RestaurantScreen } from "./src/features/restaurants/screens/restaurants.screen";
 import { theme } from "./src/infrastructure/theme";
-
+import { restaurantsRequest } from "./src/services/restaurants/restaurants.service";
 // Previous implementation of padding top - not sure about
 // change, so leaving in case this is more semantic
 // const isAndroid = Platform.OS === "android";
