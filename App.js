@@ -8,6 +8,7 @@ import {
   Oswald_400Regular,
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
+import { NavigationContainer } from "@react-navigation/native";
 
 import { RestaurantScreen } from "./src/features/restaurants/screens/restaurants.screen";
 import { theme } from "./src/infrastructure/theme";
@@ -38,9 +39,11 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <SafeArea>
-          <RestaurantScreen />
-        </SafeArea>
+        <NavigationContainer>
+          <SafeArea>
+            <RestaurantScreen />
+          </SafeArea>
+        </NavigationContainer>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
