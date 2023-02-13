@@ -46,18 +46,12 @@ const TAB_ICON = {
 };
 
 function screenOptions({ route }) {
-  const iconName = TAB_ICON[route.name];
   return {
     tabBarIcon: ({ focused, color, size }) => {
-      let iconName;
-      if (route.name === "Restaurants") {
-        iconName = focused ? "fast-food" : "fast-food-outline";
-      } else if (route.name === "Settings") {
-        iconName = focused ? "settings" : "settings-outline";
-      } else if (route.name === "Maps") {
-        iconName = focused ? "map" : "map-outline";
-      }
-      // You can return any component that you like here!
+      let iconName = focused
+        ? TAB_ICON[route.name]
+        : TAB_ICON[route.name] + "-outline";
+
       return <Ionicons name={iconName} size={size} color={color} />;
     },
     tabBarActiveTintColor: "tomato",
