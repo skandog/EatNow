@@ -16,6 +16,7 @@ import { SafeArea } from "./src/components/utils/safe-area.component";
 import { RestaurantScreen } from "./src/features/restaurants/screens/restaurants.screen";
 import { theme } from "./src/infrastructure/theme";
 import { restaurantsRequest } from "./src/services/restaurants/restaurants.service";
+import { RestaurantContextProvider } from "./src/services/restaurants/restaurants.context";
 // Previous implementation of padding top - not sure about
 // change, so leaving in case this is more semantic
 // const isAndroid = Platform.OS === "android";
@@ -74,15 +75,17 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <SafeArea>
-            <Tab.Navigator screenOptions={screenOptions}>
-              <Tab.Screen name="Restaurants" component={RestaurantScreen} />
-              <Tab.Screen name="Maps" component={MapsScreen} />
-              <Tab.Screen name="Settings" component={SettingsScreen} />
-            </Tab.Navigator>
-          </SafeArea>
-        </NavigationContainer>
+        <RestaurantContextProvider>
+          <NavigationContainer>
+            <SafeArea>
+              <Tab.Navigator screenOptions={screenOptions}>
+                <Tab.Screen name="Restaurants" component={RestaurantScreen} />
+                <Tab.Screen name="Maps" component={MapsScreen} />
+                <Tab.Screen name="Settings" component={SettingsScreen} />
+              </Tab.Navigator>
+            </SafeArea>
+          </NavigationContainer>
+        </RestaurantContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
