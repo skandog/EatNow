@@ -17,6 +17,8 @@ import { RestaurantScreen } from "./src/features/restaurants/screens/restaurants
 import { theme } from "./src/infrastructure/theme";
 import { restaurantsRequest } from "./src/services/restaurants/restaurants.service";
 import { RestaurantContextProvider } from "./src/services/restaurants/restaurants.context";
+import { LocationContextProvider } from "./src/services/location/location.context";
+
 // Previous implementation of padding top - not sure about
 // change, so leaving in case this is more semantic
 // const isAndroid = Platform.OS === "android";
@@ -75,17 +77,19 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <RestaurantContextProvider>
-          <NavigationContainer>
-            <SafeArea>
-              <Tab.Navigator screenOptions={screenOptions}>
-                <Tab.Screen name="Restaurants" component={RestaurantScreen} />
-                <Tab.Screen name="Maps" component={MapsScreen} />
-                <Tab.Screen name="Settings" component={SettingsScreen} />
-              </Tab.Navigator>
-            </SafeArea>
-          </NavigationContainer>
-        </RestaurantContextProvider>
+        <LocationContextProvider>
+          <RestaurantContextProvider>
+            <NavigationContainer>
+              <SafeArea>
+                <Tab.Navigator screenOptions={screenOptions}>
+                  <Tab.Screen name="Restaurants" component={RestaurantScreen} />
+                  <Tab.Screen name="Maps" component={MapsScreen} />
+                  <Tab.Screen name="Settings" component={SettingsScreen} />
+                </Tab.Navigator>
+              </SafeArea>
+            </NavigationContainer>
+          </RestaurantContextProvider>
+        </LocationContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>

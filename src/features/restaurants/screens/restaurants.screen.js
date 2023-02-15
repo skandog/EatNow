@@ -27,7 +27,7 @@ const LoadingContainer = styled(View)`
 
 export const RestaurantScreen = () => {
   const { isLoading, error, restaurants } = useContext(RestaurantsContext);
-  console.log(JSON.stringify(restaurants, undefined, 4));
+  // console.log(JSON.stringify(restaurants, undefined, 4));
 
   return (
     <>
