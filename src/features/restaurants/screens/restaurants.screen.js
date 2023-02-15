@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { View, FlatList } from "react-native";
-import { Searchbar, ActivityIndicator, Colors } from "react-native-paper";
+import { Searchbar, ActivityIndicator, MD2Colors } from "react-native-paper";
 import styled from "styled-components/native";
 
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
@@ -36,7 +36,7 @@ export const RestaurantScreen = () => {
       </SearchView>
       {isLoading ? (
         <LoadingContainer>
-          <ActivityIndicator />
+          <ActivityIndicator color={MD2Colors.blue600} />
         </LoadingContainer>
       ) : (
         <RestaurantList
