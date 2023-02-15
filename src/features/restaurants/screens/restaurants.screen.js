@@ -7,6 +7,7 @@ import { RestaurantInfoCard } from "../components/restaurant-info-card.component
 import { Spacer } from "../../../components/spacer/spacer.component";
 
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
+import { Search } from "../components/search.component";
 
 const SearchView = styled(View)`
   background-color: ${(props) => props.theme.colors.brand.primary};
@@ -31,9 +32,10 @@ export const RestaurantScreen = () => {
 
   return (
     <>
-      <SearchView>
+      <Search />
+      {/* <SearchView>
         <Searchbar />
-      </SearchView>
+      </SearchView> */}
       {isLoading ? (
         <LoadingContainer>
           <ActivityIndicator color={MD2Colors.blue600} />
