@@ -21,7 +21,7 @@ const LoadingContainer = styled(View)`
   align-items: center;
 `;
 
-export const RestaurantScreen = () => {
+export const RestaurantsScreen = () => {
   const { isLoading, restaurants } = useContext(RestaurantsContext);
   // console.log(JSON.stringify(restaurants, undefined, 4));
 
