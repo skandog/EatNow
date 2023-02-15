@@ -28,9 +28,7 @@ export const RestaurantScreen = () => {
   return (
     <>
       <Search />
-      {/* <SearchView>
-        <Searchbar />
-      </SearchView> */}
+
       {isLoading ? (
         <LoadingContainer>
           <ActivityIndicator color={MD2Colors.blue600} />
