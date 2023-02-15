@@ -9,11 +9,6 @@ import { Spacer } from "../../../components/spacer/spacer.component";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { Search } from "../components/search.component";
 
-const SearchView = styled(View)`
-  background-color: ${(props) => props.theme.colors.brand.primary};
-  padding: ${(props) => props.theme.space.l};
-`;
-
 const RestaurantList = styled(FlatList).attrs({
   contentContainerStyle: {
     padding: 16,
