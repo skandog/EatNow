@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { View, FlatList } from "react-native";
-import { Searchbar } from "react-native-paper";
-import styled from "styled-components";
+import { Searchbar, ActivityIndicator, Colors } from "react-native-paper";
+import styled from "styled-components/native";
 
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
@@ -19,6 +19,12 @@ const RestaurantList = styled(FlatList).attrs({
   },
 })``;
 
+const LoadingContainer = styled(View)`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const RestaurantScreen = () => {
   const { isLoading, error, restaurants } = useContext(RestaurantsContext);
   console.log(JSON.stringify(restaurants, undefined, 4));
@@ -28,16 +34,22 @@ export const RestaurantScreen = () => {
       <SearchView>
         <Searchbar />
       </SearchView>
-      <RestaurantList
-        // data={[{ name: 1 }, { name: 2 }, { name: 3 }, { name: 4 }]}
-        data={restaurants}
-        renderItem={({ item }) => (
-          <Spacer position={"bottom"} size="large">
-            <RestaurantInfoCard restaurant={item} />
-          </Spacer>
-        )}
-        keyExtractor={(item) => item.name}
-      />
+      {isLoading ? (
+        <LoadingContainer>
+          <ActivityIndicator />
+        </LoadingContainer>
+      ) : (
+        <RestaurantList
+          // data={[{ name: 1 }, { name: 2 }, { name: 3 }, { name: 4 }]}
+          data={restaurants}
+          renderItem={({ item }) => (
+            <Spacer position={"bottom"} size="large">
+              <RestaurantInfoCard restaurant={item} />
+            </Spacer>
+          )}
+          keyExtractor={(item) => item.name}
+        />
+      )}
     </>
   );
 };
