@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { View, FlatList } from "react-native";
-import { Searchbar, ActivityIndicator, MD2Colors } from "react-native-paper";
+import { ActivityIndicator, MD2Colors } from "react-native-paper";
 import styled from "styled-components/native";
 
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
@@ -22,7 +22,7 @@ const LoadingContainer = styled(View)`
 `;
 
 export const RestaurantScreen = () => {
-  const { isLoading, error, restaurants } = useContext(RestaurantsContext);
+  const { isLoading, restaurants } = useContext(RestaurantsContext);
   // console.log(JSON.stringify(restaurants, undefined, 4));
 
   return (

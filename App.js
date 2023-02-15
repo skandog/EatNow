@@ -1,7 +1,6 @@
 import React from "react";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import { SafeAreaView, StatusBar, View, Text } from "react-native";
-import styled from "styled-components";
+import { View, Text } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import {
   useFonts as useOswald,
@@ -15,7 +14,6 @@ import { Ionicons } from "@expo/vector-icons";
 import { SafeArea } from "./src/components/utils/safe-area.component";
 import { RestaurantScreen } from "./src/features/restaurants/screens/restaurants.screen";
 import { theme } from "./src/infrastructure/theme";
-import { restaurantsRequest } from "./src/services/restaurants/restaurants.service";
 import { RestaurantContextProvider } from "./src/services/restaurants/restaurants.context";
 import { LocationContextProvider } from "./src/services/location/location.context";
 
