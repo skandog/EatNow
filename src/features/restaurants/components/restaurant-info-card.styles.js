@@ -51,5 +51,5 @@ export const Icon = styled(Image)`
 export const ModalContainer = styled(View)`
   flex: 1;
   align-items: center;
-  
+  background-color: ${(props) => props.theme.colors.bg.secondary};
 `;
