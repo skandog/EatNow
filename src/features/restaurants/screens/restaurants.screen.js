@@ -40,7 +40,7 @@ export const RestaurantsScreen = ({ navigation }) => {
             <Spacer position={"bottom"} size="large">
               <TouchableOpacity
                 onPress={() =>
-                  navigation.navigate("RestaurantDetail", { item: item })
+                  navigation.navigate("RestaurantDetail", { restaurant: item })
                 }
               >
                 <RestaurantInfoCard restaurant={item} />

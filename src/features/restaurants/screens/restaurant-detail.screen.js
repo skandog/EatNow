@@ -5,11 +5,10 @@ import { RestaurantInfoCard } from "../components/restaurant-info-card.component
 import { ModalContainer } from "../components/restaurant-info-card.styles";
 
 export const RestaurantDetailScreen = ({ route, navigation }) => {
-  const { item } = route.params;
-  console.log(item);
+  const { restaurant } = route.params;
   return (
     <ModalContainer>
-      <RestaurantInfoCard restaurant={item} />
+      <RestaurantInfoCard restaurant={restaurant} />
     </ModalContainer>
   );
 };
