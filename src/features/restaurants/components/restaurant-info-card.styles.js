@@ -49,6 +49,7 @@ export const Icon = styled(Image)`
 `;
 
 export const ModalContainer = styled(View)`
-  padding: ${(props) => props.theme.space.l};
+  flex: 1;
+  ${"" /* padding: ${(props) => props.theme.space.l}; */}
   background-color: ${(props) => props.theme.colors.bg.secondary};
 `;

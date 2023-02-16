@@ -26,6 +26,7 @@ export const RestaurantsNavigator = () => {
       <RestaurantStack.Screen
         name="RestaurantDetail"
         component={RestaurantDetailScreen}
+        options={{ gestureEnabled: true }}
       />
     </RestaurantStack.Navigator>
   );
