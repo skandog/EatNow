@@ -47,3 +47,9 @@ export const Icon = styled(Image)`
   width: 15px;
   height: 15px;
 `;
+
+export const ModalContainer = styled(View)`
+  flex: 1;
+  align-items: center;
+  
+`;
