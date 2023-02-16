@@ -47,3 +47,8 @@ export const Icon = styled(Image)`
   width: 15px;
   height: 15px;
 `;
+
+export const ModalContainer = styled(View)`
+  padding: ${(props) => props.theme.space.l};
+  background-color: ${(props) => props.theme.colors.bg.secondary};
+`;

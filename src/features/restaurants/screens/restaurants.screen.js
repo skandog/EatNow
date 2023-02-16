@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { View, FlatList } from "react-native";
+import { View, FlatList, TouchableOpacity } from "react-native";
 import { ActivityIndicator, MD2Colors } from "react-native-paper";
 import styled from "styled-components/native";
 
@@ -21,9 +21,8 @@ const LoadingContainer = styled(View)`
   align-items: center;
 `;
 
-export const RestaurantScreen = () => {
+export const RestaurantsScreen = ({ navigation }) => {
   const { isLoading, restaurants } = useContext(RestaurantsContext);
-  // console.log(JSON.stringify(restaurants, undefined, 4));
 
   return (
     <>
@@ -39,7 +38,13 @@ export const RestaurantScreen = () => {
           data={restaurants}
           renderItem={({ item }) => (
             <Spacer position={"bottom"} size="large">
-              <RestaurantInfoCard restaurant={item} />
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("RestaurantDetail", { restaurant: item })
+                }
+              >
+                <RestaurantInfoCard restaurant={item} />
+              </TouchableOpacity>
             </Spacer>
           )}
           keyExtractor={(item) => item.name}
