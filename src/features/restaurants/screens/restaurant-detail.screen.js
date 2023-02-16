@@ -29,8 +29,14 @@ export const RestaurantDetailScreen = ({ route, navigation }) => {
           title="Lunch"
           left={(props) => <List.Icon {...props} icon="food" />}
         >
-          <List.Item title="Burger" />
-          <List.Item title="Fries" />
+          <List.Item
+            title="Burger"
+            left={(props) => <List.Icon {...props} icon="hamburger" />}
+          />
+          <List.Item
+            title="Fries"
+            left={(props) => <List.Icon {...props} icon="french-fries" />}
+          />
         </List.Accordion>
         <List.Accordion
           title="Dinner"
@@ -42,7 +48,10 @@ export const RestaurantDetailScreen = ({ route, navigation }) => {
             title="Steak"
             left={(props) => <List.Icon {...props} icon="food-steak" />}
           />
-          <List.Item title="Chicken Caesar" />
+          <List.Item
+            title="Chicken Caesar"
+            left={(props) => <List.Icon {...props} icon="food-drumstick" />}
+          />
         </List.Accordion>
       </List.Section>
     </ModalContainer>
