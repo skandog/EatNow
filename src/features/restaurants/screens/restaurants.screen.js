@@ -23,9 +23,7 @@ const LoadingContainer = styled(View)`
 
 export const RestaurantsScreen = ({ navigation }) => {
   const { isLoading, restaurants } = useContext(RestaurantsContext);
-  // console.log(JSON.stringify(navigation, null, 2));
 
-  console.log("nav: ", navigation);
   return (
     <>
       <Search />
