@@ -1,8 +1,7 @@
 import React from "react";
 import { Spacer } from "../../../components/spacer/spacer.component";
 
-import { Text } from "../../../components/typography/text.component";
-import { SafeArea } from "../../../components/utils/safe-area.component";
+import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { ModalContainer } from "../components/restaurant-info-card.styles";
 
 export const RestaurantDetailScreen = ({ route, navigation }) => {
@@ -11,7 +10,7 @@ export const RestaurantDetailScreen = ({ route, navigation }) => {
   return (
     <ModalContainer>
       <Spacer position={"top"} size={"large"}>
-        <Text>Rezzy Deets</Text>
+        <RestaurantInfoCard restaurant={item} />
       </Spacer>
     </ModalContainer>
   );
