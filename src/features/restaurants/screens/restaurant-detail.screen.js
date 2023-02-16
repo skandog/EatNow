@@ -9,9 +9,7 @@ export const RestaurantDetailScreen = ({ route, navigation }) => {
   console.log(item);
   return (
     <ModalContainer>
-      <Spacer position={"top"} size={"large"}>
-        <RestaurantInfoCard restaurant={item} />
-      </Spacer>
+      <RestaurantInfoCard restaurant={item} />
     </ModalContainer>
   );
 };
