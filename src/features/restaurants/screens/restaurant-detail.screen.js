@@ -6,10 +6,19 @@ import { Spacer } from "../../../components/spacer/spacer.component";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { ModalContainer } from "../components/restaurant-info-card.styles";
 
+const Icon = (props) => {
+  const { iconName, otherProps } = props;
+  return <List.Icon {...otherProps} icon={iconName} />;
+};
+
 export const RestaurantDetailScreen = ({ route, navigation }) => {
   const [expanded, setExpanded] = useState(true);
 
   const handlePress = () => setExpanded(!expanded);
+
+  const customProps = {
+    iconName: "food",
+  };
 
   const { restaurant } = route.params;
   return (
@@ -29,6 +38,7 @@ export const RestaurantDetailScreen = ({ route, navigation }) => {
               title="Sausages"
               left={(props) => <List.Icon {...props} icon="sausage" />}
             />
+            {/* <List.Item title="Test" left={() => Icon(customProps)} /> */}
             <List.Item
               title="Eggs"
               left={(props) => <List.Icon {...props} icon="egg-fried" />}
