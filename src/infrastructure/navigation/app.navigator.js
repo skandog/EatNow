@@ -17,14 +17,6 @@ function SettingsScreen() {
   );
 }
 
-function MapsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Maps!</Text>
-    </View>
-  );
-}
-
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {

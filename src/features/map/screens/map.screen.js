@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import MapView, { Marker, Callout } from "react-native-maps";
 import styled from "styled-components/native";
-import { Text } from "../../../components/typography/text.component";
 
 import { LocationContext } from "../../../services/location/location.context";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
@@ -29,7 +28,6 @@ export const MapScreen = ({ navigation }) => {
     setLatDelta(northeastLat - southwestLat);
   }, [location, viewport]);
 
-  console.log(JSON.stringify(restaurants, undefined, 2));
   return (
     <>
       <Search />
