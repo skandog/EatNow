@@ -18,7 +18,6 @@ export const Favourite = ({ restaurant }) => {
 
   const isFavourite = favourites.some((r) => r.placeId === restaurant.placeId);
 
-  console.log(JSON.stringify(isFavourite, undefined, 2));
   return (
     <FavouriteButton
       onPress={() =>
