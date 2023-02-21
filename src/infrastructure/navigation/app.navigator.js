@@ -41,13 +41,11 @@ function screenOptions({ route }) {
 }
 
 export const AppNavigator = () => (
-  <NavigationContainer>
-    <SafeArea>
-      <Tab.Navigator screenOptions={screenOptions}>
-        <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
-        <Tab.Screen name="Maps" component={MapScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
-      </Tab.Navigator>
-    </SafeArea>
-  </NavigationContainer>
+  <SafeArea>
+    <Tab.Navigator screenOptions={screenOptions}>
+      <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
+      <Tab.Screen name="Maps" component={MapScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
+    </Tab.Navigator>
+  </SafeArea>
 );
