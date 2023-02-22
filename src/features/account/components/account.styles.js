@@ -2,6 +2,7 @@ import styled from "styled-components/native";
 import { ImageBackground, View } from "react-native";
 import { Button, TextInput } from "react-native-paper";
 
+import { Text } from "../../../components/typography/text.component";
 import { colors } from "../../../infrastructure/theme/colors";
 
 const image = require("../../../../assets/home-background.jpg");
@@ -20,6 +21,13 @@ export const AccountCover = styled(View)`
   height: 100%;
   width: 100%;
   background-color: rgba(215, 215, 255, 0.4);
+`;
+
+export const Title = styled(Text).attrs({ variant: "label" })`
+  font-size: ${(props) => props.theme.fontSizes.h2};
+  color: ${colors.text.inverse};
+  text-shadow-color: ${colors.brand.secondary};
+  text-shadow-radius: 15px;
 `;
 
 export const AccountContainer = styled.View`
