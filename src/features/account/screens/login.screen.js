@@ -1,4 +1,6 @@
 import React, { useState, useContext } from "react";
+
+import { Text } from "../../../components/typography/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 
@@ -13,7 +15,7 @@ import {
 export const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { onLogin } = useContext(AuthenticationContext);
+  const { onLogin, error } = useContext(AuthenticationContext);
 
   return (
     <AccountBackgroundImage>
@@ -38,6 +40,11 @@ export const LoginScreen = () => {
             secure
           />
         </Spacer>
+        {error && (
+          <Spacer size="large">
+            <Text variant="error">{error}</Text>
+          </Spacer>
+        )}
         <Spacer size="large">
           <AuthButton
             icon="lock-open-outline"
