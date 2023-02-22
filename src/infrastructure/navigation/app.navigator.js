@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import { Text, View } from "react-native";
@@ -7,11 +7,17 @@ import { SafeArea } from "../../components/utils/safe-area.component";
 import { MapScreen } from "../../features/map/screens/map.screen";
 
 import { RestaurantsNavigator } from "./restaurants.navigator";
+import { AuthenticationContext } from "../../services/authentication/authentication.context";
+import { AuthButton } from "../../features/account/components/account.styles";
 
 function SettingsScreen() {
+  const { onLogout } = useContext(AuthenticationContext);
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <Text>Settings!</Text>
+      <AuthButton icon="email" mode="contained" onPress={() => onLogout()}>
+        Logout
+      </AuthButton>
     </View>
   );
 }

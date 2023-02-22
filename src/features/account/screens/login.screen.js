@@ -6,6 +6,7 @@ import {
   AccountBackgroundImage,
   AccountContainer,
   AccountCover,
+  AuthButton,
   AuthInput,
 } from "../components/account.styles";
 
@@ -22,13 +23,29 @@ export const LoginScreen = () => {
           label="Email"
           value={email}
           onChangeText={(text) => setEmail(text)}
+          textContentType="emailAddress"
+          keyboardType="email-address"
+          autoCapitalize="none"
         />
         <Spacer position={"top"} size="large">
           <AuthInput
             label="Password"
             value={password}
             onChangeText={(text) => setPassword(text)}
+            textContentType="password"
+            secureTextEntry
+            autoCapitalize="none"
+            secure
           />
+        </Spacer>
+        <Spacer size="large">
+          <AuthButton
+            icon="lock-open-outline"
+            mode="contained"
+            onPress={() => onLogin(email, password)}
+          >
+            Login
+          </AuthButton>
         </Spacer>
       </AccountContainer>
     </AccountBackgroundImage>
