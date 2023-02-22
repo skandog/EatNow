@@ -41,7 +41,6 @@ export const LoginScreen = ({ navigation }) => {
             textContentType="password"
             secureTextEntry
             autoCapitalize="none"
-            secure
           />
         </Spacer>
         {error && (
