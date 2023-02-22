@@ -47,8 +47,8 @@ export const RegisterSceen = ({ navigation }) => {
         <Spacer position={"top"} size="large">
           <AuthInput
             label="Repeat Password"
-            value={password}
-            onChangeText={(text) => setPassword(text)}
+            value={repeatedPassword}
+            onChangeText={(text) => setRepeatedPassword(text)}
             textContentType="password"
             secureTextEntry
             autoCapitalize="none"
@@ -61,11 +61,11 @@ export const RegisterSceen = ({ navigation }) => {
         )}
         <Spacer size="large">
           <AuthButton
-            icon="lock-open-outline"
+            icon="email"
             mode="contained"
             onPress={() => onRegister(email, password, repeatedPassword)}
           >
-            Login
+            Register
           </AuthButton>
         </Spacer>
       </AccountContainer>
