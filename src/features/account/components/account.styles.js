@@ -45,3 +45,11 @@ export const AuthButton = styled(Button).attrs({
 export const AuthInput = styled(TextInput)`
   width: 320px;
 `;
+
+export const ErrorContainer = styled.View`
+  max-width: 320px;
+  align-items: center;
+  align-self: center;
+  margin-top: ${(props) => props.theme.space.s};
+  margin-bottom: ${(props) => props.theme.space.s};
+`;
