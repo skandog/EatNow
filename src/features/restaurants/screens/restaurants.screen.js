@@ -46,7 +46,6 @@ export const RestaurantsScreen = ({ navigation }) => {
         </LoadingContainer>
       ) : (
         <RestaurantList
-          // data={[{ name: 1 }, { name: 2 }, { name: 3 }, { name: 4 }]}
           data={restaurants}
           renderItem={({ item }) => (
             <Spacer position={"bottom"} size="large">
