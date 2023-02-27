@@ -9,11 +9,7 @@ import { FavouritesContext } from "../../../services/favourites/favourites.conte
 import { SafeArea } from "../../../components/utils/safe-area.component";
 import { Text } from "../../../components/typography/text.component";
 
-const FavouritesList = styled(FlatList).attrs({
-  contentContainerStyle: {
-    padding: 16,
-  },
-})``;
+import { RestaurantList as FavouritesList } from "../../restaurants/components/restaurant-list.styles";
 
 const NoFaves = styled(SafeArea)`
   align-items: center;
