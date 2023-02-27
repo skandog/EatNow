@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { List } from "react-native-paper";
+import { List, Avatar } from "react-native-paper";
 
 import { SafeArea } from "../../../components/utils/safe-area.component";
+import { Spacer } from "../../../components/spacer/spacer.component";
+import { Text } from "../../../components/typography/text.component";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 import { AuthButton } from "../../account/components/account.styles";
 
@@ -10,10 +12,21 @@ const SettingsItem = styled(List.Item)`
   padding: ${(props) => props.theme.space.l};
 `;
 
+const AvatarContainer = styled.View`
+  align-items: center;
+`;
+
 export const SettingsScreen = ({ navigation }) => {
-  const { onLogout } = useContext(AuthenticationContext);
+  const { onLogout, user } = useContext(AuthenticationContext);
   return (
     <SafeArea>
+      <AvatarContainer>
+        <Avatar.Icon size={180} icon="human" backgroundColor="#2182BD" />
+        <Spacer position="top" size="large">
+          <Text variant="label">{user.email}</Text>
+        </Spacer>
+      </AvatarContainer>
+
       <List.Section>
         <SettingsItem
           style={{ padding: 16 }}
